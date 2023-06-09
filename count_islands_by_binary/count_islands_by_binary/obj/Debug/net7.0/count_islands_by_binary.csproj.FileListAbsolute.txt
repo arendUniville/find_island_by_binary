@@ -1,0 +1,15 @@
+C:\repUniville\Csharp e DotNet\find_island_by_binary\count_islands_by_binary\count_islands_by_binary\bin\Debug\net7.0\count_islands_by_binary.exe
+C:\repUniville\Csharp e DotNet\find_island_by_binary\count_islands_by_binary\count_islands_by_binary\bin\Debug\net7.0\count_islands_by_binary.deps.json
+C:\repUniville\Csharp e DotNet\find_island_by_binary\count_islands_by_binary\count_islands_by_binary\bin\Debug\net7.0\count_islands_by_binary.runtimeconfig.json
+C:\repUniville\Csharp e DotNet\find_island_by_binary\count_islands_by_binary\count_islands_by_binary\bin\Debug\net7.0\count_islands_by_binary.dll
+C:\repUniville\Csharp e DotNet\find_island_by_binary\count_islands_by_binary\count_islands_by_binary\bin\Debug\net7.0\count_islands_by_binary.pdb
+C:\repUniville\Csharp e DotNet\find_island_by_binary\count_islands_by_binary\count_islands_by_binary\obj\Debug\net7.0\count_islands_by_binary.csproj.AssemblyReference.cache
+C:\repUniville\Csharp e DotNet\find_island_by_binary\count_islands_by_binary\count_islands_by_binary\obj\Debug\net7.0\count_islands_by_binary.GeneratedMSBuildEditorConfig.editorconfig
+C:\repUniville\Csharp e DotNet\find_island_by_binary\count_islands_by_binary\count_islands_by_binary\obj\Debug\net7.0\count_islands_by_binary.AssemblyInfoInputs.cache
+C:\repUniville\Csharp e DotNet\find_island_by_binary\count_islands_by_binary\count_islands_by_binary\obj\Debug\net7.0\count_islands_by_binary.AssemblyInfo.cs
+C:\repUniville\Csharp e DotNet\find_island_by_binary\count_islands_by_binary\count_islands_by_binary\obj\Debug\net7.0\count_islands_by_binary.csproj.CoreCompileInputs.cache
+C:\repUniville\Csharp e DotNet\find_island_by_binary\count_islands_by_binary\count_islands_by_binary\obj\Debug\net7.0\count_islands_by_binary.dll
+C:\repUniville\Csharp e DotNet\find_island_by_binary\count_islands_by_binary\count_islands_by_binary\obj\Debug\net7.0\refint\count_islands_by_binary.dll
+C:\repUniville\Csharp e DotNet\find_island_by_binary\count_islands_by_binary\count_islands_by_binary\obj\Debug\net7.0\count_islands_by_binary.pdb
+C:\repUniville\Csharp e DotNet\find_island_by_binary\count_islands_by_binary\count_islands_by_binary\obj\Debug\net7.0\count_islands_by_binary.genruntimeconfig.cache
+C:\repUniville\Csharp e DotNet\find_island_by_binary\count_islands_by_binary\count_islands_by_binary\obj\Debug\net7.0\ref\count_islands_by_binary.dll
