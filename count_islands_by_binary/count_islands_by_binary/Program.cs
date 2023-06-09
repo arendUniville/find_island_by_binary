@@ -1,7 +1,7 @@
 ﻿using count_island_by_binary.Entity;
 using System;
 using System.Drawing;
-
+using System.Dynamic;
 
 class Progam
 {
@@ -71,8 +71,8 @@ class Progam
                 int value = matrix[index[0], index[1]];
 
 
-                Console.WriteLine("------------------------------------");
-                Console.WriteLine($"Actual value: [{value}] / index: [{index[0]},{index[1]}]");
+                //Console.WriteLine("------------------------------------");
+                //Console.WriteLine($"Actual value: [{value}] / index: [{index[0]},{index[1]}]");
 
 
                 //Verificando se é o primeiro valor da matriz
@@ -81,59 +81,100 @@ class Progam
                     SpotInt spot = new SpotInt(index, value, null, null, null, null);
                     spots.Add(spot);
 
-                    Console.WriteLine($"Left(val: null) | index([null, null])");
+                    //Console.WriteLine($"Left(val: null) | index([null, null])");
 
 
                 }
                 //Verificando se é a primeira linha, após a primeira coluna e antes da última
                 else if (a == 0 && b != 0)
                 {
-
+                        
+                    //Get left value
                     SpotInt westValue = spots.Where(s => s.Index[0] == a && s.Index[1] == (b - 1)).First();
+
+                    //Create actual spot
                     SpotInt spot = new SpotInt(index, value, null, null, null, westValue);
+
+                    //Add actual spot in a spot list
                     spots.Add(spot);
 
-                    Console.WriteLine($"Left(val {westValue.Value}) | index([{westValue.Index[0]}, {westValue.Index[1]}])");
+
+
+                    //Inserting spot 'east' in previus value
+                    westValue.East = spot;
+
+
+
+                    //Console.WriteLine($"Left(val {westValue.Value}) | index([{westValue.Index[0]}, {westValue.Index[1]}])");
 
 
                 }
                 else if (a != 0 && b == 0)
                 {
 
+                    //Get north value
                     SpotInt northValue = spots.Where(s => s.Index[0] == (a - 1) && s.Index[1] == b).First();
+
+                    //Create actual spot
                     SpotInt spot = new SpotInt(index, value, northValue, null, null, null);
+                    
+                    //Add actual spot in a spot list
                     spots.Add(spot);
 
-                    Console.WriteLine($"North(val: {northValue.Value}) | index([{northValue.Index[0]}, {northValue.Index[1]}])");
-                    Console.WriteLine($"West(val: null | index(null, null])");
+
+                    //Inserting spot 'south' in north value
+                    northValue.South = spot;
+
+
+                    //Console.WriteLine($"North(val: {northValue.Value}) | index([{northValue.Index[0]}, {northValue.Index[1]}])");
+                    //Console.WriteLine($"West(val: null | index(null, null])");
 
 
                 }
                 else if (a != 0 && b != 0)
                 {
 
+                    //Get west value
                     SpotInt westValue = spots.Where(s => s.Index[0] == a && s.Index[1] == (b - 1)).First();
+
+                    //Get north value
                     SpotInt northValue = spots.Where(s => s.Index[0] == (a - 1) && s.Index[1] == b).First();
+
+                    //Create actual spot
                     SpotInt spot = new SpotInt(index, value, northValue, null, null, westValue);
+
+                    //Add actual spot in a spot list
                     spots.Add(spot);
 
 
-                    Console.WriteLine($"North(val: {northValue.Value}) | index([{northValue.Index[0]}, {northValue.Index[1]}])");
-                    Console.WriteLine($"West(val: {westValue.Value}) | index([{westValue.Index[0]}, {westValue.Index[1]}])");
+                    //Inserting spot 'south' in north value
+                    northValue.South = spot;
+
+                    //Inserting spot 'east' in previus value
+                    westValue.East = spot;
+
+                    //Console.WriteLine($"North(val: {northValue.Value}) | index([{northValue.Index[0]}, {northValue.Index[1]}])");
+                    //Console.WriteLine($"West(val: {westValue.Value}) | index([{westValue.Index[0]}, {westValue.Index[1]}])");
 
 
                 }
 
 
+                /*
                 Console.WriteLine();
-
                 Console.Read();
-
+                */
             }
 
 
         }
 
+        SpotInt objSpot = new SpotInt();
+
+        //objSpot.ShowSpotsDeatils(spots);
+
+
+        objSpot.ShowSpotRound(spots, matrix);
 
 
         return 0;
@@ -285,7 +326,6 @@ class Progam
 
         }
 
-        Console.WriteLine("--------------------");
 
 
     }
