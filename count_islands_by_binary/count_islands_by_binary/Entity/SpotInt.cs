@@ -252,5 +252,201 @@ class SpotInt
 
 
     }
+    
+    public void ShowSpotRoundClear(List<SpotInt> spots, int[,] matrix, int timeExecution)
+    {
+
+
+        int lines = matrix.GetLength(0);
+        int columns = matrix.GetLength(1);
+
+        SpotInt north = null;
+        SpotInt south = null;
+        SpotInt east = null;
+        SpotInt west = null;
+
+
+        foreach (SpotInt s in spots)
+        {
+
+            Console.WriteLine("\n------------------------------");
+            Console.WriteLine($"Spot: {s.Index[0]}, {s.Index[1]} | Value: {s.Value}");
+            Console.WriteLine("--------------------------------");
+
+
+            for (int a = 0; a < lines; a++)
+            {
+
+                north = s.North;
+                south = s.South;
+                east = s.East;
+                west = s.West;
+
+
+                Console.Write("[");
+
+                if (a == s.Index[0])
+                {
+
+                    for (int b = 0; b < columns; b++)
+                    {
+
+                        //SpotInt actualSpot = spots.Where(s => s.Index[0] == a && s.Index[1] == b).FirstOrDefault();
+
+                        if (s.Index[0] == a && s.Index[1] == b)
+                        {
+                            if (s.Value < 10)
+                                Console.Write($"0{s.Value}");
+                            else
+                                Console.Write($"{s.Value}");
+
+
+                            if (b == (columns - 1))
+                                Console.Write($"]\n");
+                            else
+                                Console.Write($", ");
+                        }
+
+                        else if (north != null && north.Index[0] == a && north.Index[1] == b)
+                        {
+                            if (north.Value < 10)
+                                Console.Write($"0{north.Value}");
+                            else
+                                Console.Write($"{north.Value}");
+
+
+                            if (b == (columns - 1))
+                                Console.Write($"]\n");
+                            else
+                                Console.Write($", ");
+
+                        }
+
+                        else if (south != null && south.Index[0] == a && south.Index[1] == b)
+                        {
+                            if (south.Value < 10)
+                                Console.Write($"0{south.Value}");
+                            else
+                                Console.Write($"{south.Value}");
+
+
+                            if (b == (columns - 1))
+                                Console.Write($"]\n");
+                            else
+                                Console.Write($", ");
+
+                        }
+
+                        else if (east != null && east.Index[0] == a && east.Index[1] == b)
+                        {
+                            if (east.Value < 10)
+                                Console.Write($"0{east.Value}");
+                            else
+                                Console.Write($"{east.Value}");
+
+
+                            if (b == (columns - 1))
+                                Console.Write($"]\n");
+                            else
+                                Console.Write($", ");
+
+                        }
+
+
+                        else if (west != null && west.Index[0] == a && west.Index[1] == b)
+                        {
+                            if (west.Value < 10)
+                                Console.Write($"0{west.Value}");
+                            else
+                                Console.Write($"{west.Value}");
+
+
+
+                            if (b == (columns - 1))
+                                Console.Write($"]\n");
+                            else
+                                Console.Write($", ");
+
+                        }
+
+                        else if (b == (columns - 1))
+                        {
+                            Console.Write("  ]\n");
+                        }
+                        
+                        else
+                        {
+                            Console.Write("  , ");
+                        }
+
+                    }
+
+                }
+
+                else
+                {
+
+                    for (int b = 0; b < columns; b++)
+                    {
+
+                        if (north != null && north.Index[0] == a && north.Index[1] == b)
+                        {
+
+                            if (north.Value < 10)
+                                Console.Write($"0{north.Value}");
+                            else
+                                Console.Write($"{north.Value}");
+
+
+                            if (b == (columns - 1))
+                                Console.Write($"]\n");
+                            else
+                                Console.Write($", ");
+
+                        }
+
+                        else if (south != null && south.Index[0] == a && south.Index[1] == b)
+                        {
+
+                            if (south.Value < 10)
+                                Console.Write($"0{south.Value}");
+                            else
+                                Console.Write($"{south.Value}");
+
+
+                            if (b == (columns - 1))
+                                Console.Write($"]\n");
+                            else
+                                Console.Write($", ");
+
+                        }
+
+                        else if (b == (columns - 1))
+                        {
+                            Console.Write("  ]\n");
+                        }
+
+                        else
+                        {
+                            Console.Write("  , ");
+                        }
+
+                    }
+
+                }
+            }
+
+            Console.WriteLine();
+            Console.ReadLine();
+
+            Thread.Sleep(timeExecution);
+            Console.Clear();
+
+
+        }
+
+
+
+    }
 
 }
