@@ -21,16 +21,21 @@ class Progam
 
         int[,] matrixInt0 =
         {
-            {0, 1, 2, 3, 4},
-            {5, 6, 7, 8, 9},
-            {10, 11, 12, 13, 14},
-            {15, 16, 17, 18, 19}
+            {1, 1, 1, 0, 0},
+            {1, 1, 0, 0, 0},
+            {0, 0, 1, 0, 0},
+            {0, 0, 0, 1, 1}
         };
 
 
+        Console.Write("Set total lines: ");
+        int lines = int.Parse(Console.ReadLine());
 
-        int lines = 5;
-        int columns = 3;
+        Console.Write("Set total columns: ");
+        int columns = int.Parse(Console.ReadLine());
+
+
+        Wait();
 
 
 
@@ -51,7 +56,7 @@ class Progam
         }
 
 
-        ShowMatrixInt(matrixInt);
+        ShowMatrixInt(matrixInt0);
         Console.Write("\nThis is your map, press enter to continue.");
         Console.Read();
 
@@ -83,7 +88,7 @@ class Progam
 
 
         //int totalIslands = CountIslandsInt(matrixInt);
-        List<SpotInt> spots = ScanMap(matrixInt);
+        List<SpotInt> spots = ScanMap(matrixInt0);
 
 
         Console.WriteLine("\nThe map has been divided by spots, \neach spot have a north, south, east and west poles that represents your neighborhood.");
@@ -92,9 +97,16 @@ class Progam
         Console.Clear();
 
 
+        List<Island> islands = FindIslands(spots, matrixInt0);
 
         Console.WriteLine($"Total spots: {spots.Count}");
+        Console.WriteLine($"Total islands: {islands.Count}");
 
+
+        foreach(Island i in islands)
+        {
+            Console.WriteLine($"[{i.LandSpot.Index[0]}, {i.LandSpot.Index[1]}] | {i.LandSpot}");
+        }
 
     }
 
@@ -202,11 +214,6 @@ class Progam
         }
 
         SpotInt objSpot = new SpotInt();
-
-        //objSpot.ShowSpotsDeatils(spots);
-
-
-        //objSpot.ShowSpotRound(spots, matrix);
         objSpot.ShowSpotRoundClear(spots, matrix, 100);
 
 
@@ -222,9 +229,91 @@ class Progam
         List<Island> islands = new List<Island>();
 
 
+        int countIsland = 1;
+
+        bool isWhater = false;
 
 
+        Island island = new Island(countIsland);
 
+
+        foreach (SpotInt s in spots) 
+        {
+
+            int truePole = 0;
+
+            //Se encontrou agua
+            if (isWhater)
+            {
+                island = new Island(countIsland);
+                isWhater = false;
+            }
+            else
+            {
+                countIsland--;
+            }
+
+
+            //Se não estiver nulo
+            if (s.North != null)
+            {
+                if(s.North.Value == 1)
+                {
+                    //Se já não existir na lista
+                    if (!islands.Any(x => x.LandSpot.Index == s.Index))
+                    {
+                        island.LandSpot = s;
+                        islands.Add(island);
+                        truePole++;
+                    }
+                }
+            }
+
+            if(s.South != null)
+            {
+                if (s.South.Value == 1)
+                {
+                    //Se já não existir na lista
+                    if (!islands.Any(x => x.LandSpot.Index == s.Index))
+                    {
+                        island.LandSpot = s;
+                        islands.Add(island);
+                        truePole++;
+                    }
+                }
+            }
+
+            if(s.East != null)
+            {
+                if (s.East.Value == 1)
+                {
+                    //Se já não existir na lista
+                    if (!islands.Any(x => x.LandSpot.Index == s.Index))
+                    {
+                        island.LandSpot = s;
+                        islands.Add(island);
+                        truePole++;
+                    }
+                }
+            }
+
+            if(s.West != null)
+            {
+                if (s.West.Value == 1)
+                {
+                    //Se já não existir na lista
+                    if (!islands.Any(x => x.LandSpot.Index == s.Index))
+                    {
+                        island.LandSpot = s;
+                        islands.Add(island);
+                        truePole++;
+                    }
+                }
+            }
+
+            countIsland++;
+
+        }
 
         return islands;
 
@@ -297,5 +386,11 @@ class Progam
 
     }
 
+
+    public static void Wait()
+    {
+        Thread.Sleep(500);
+        Console.Clear();
+    }
 
 }

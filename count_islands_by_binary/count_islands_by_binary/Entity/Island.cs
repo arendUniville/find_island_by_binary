@@ -10,12 +10,16 @@ namespace count_islands_by_binary.Entity;
 class Island
 {
     public int Id { get; set; }
-    public List<SpotInt> LandSpot { get; set; } //Pontos do mapa que juntos formam a ilha
+    public SpotInt LandSpot { get; set; } //Pontos do mapa que juntos formam a ilha
 
 
-    public Island() { }
 
-    public Island(int id, List<SpotInt> landSpot)
+    public Island(int id) 
+    {
+        Id = id;
+    }
+
+    public Island(int id, SpotInt landSpot)
     {
         Id = id;
         LandSpot = landSpot ?? null;

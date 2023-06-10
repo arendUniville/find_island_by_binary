@@ -436,7 +436,7 @@ class SpotInt
                 }
             }
 
-            Console.WriteLine();
+            Console.Write("\nPress 'enter' to skip. ");
             Console.ReadLine();
 
             Thread.Sleep(timeExecution);
