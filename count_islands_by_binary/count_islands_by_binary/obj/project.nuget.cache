@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0yrARpFju9m5ru9enOhIms73H5+XqSyXjFXwS8uXbjMFXs8oGan5NmwPvlvChsmS5OsxFoqEuDp+EIz5nVUN1A==",
+  "dgSpecHash": "E1XrjxfcL3bnjwUtpeHQywYDP1Mn3fcjiyd5EoLynH0WklxgX0XEkQ6jQUlv4zxhTqXeoDl4pvjxjDqgsD84iw==",
   "success": true,
-  "projectFilePath": "C:\\repUniville\\Csharp e DotNet\\find_island_by_binary\\count_islands_by_binary\\count_islands_by_binary\\count_islands_by_binary.csproj",
+  "projectFilePath": "C:\\projects\\CSharp\\Algoritimos\\find_island_by_binary\\count_islands_by_binary\\count_islands_by_binary\\count_islands_by_binary.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

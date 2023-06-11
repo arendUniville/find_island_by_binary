@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = count_islands_by_binary
-build_property.ProjectDir = C:\repUniville\Csharp e DotNet\find_island_by_binary\count_islands_by_binary\count_islands_by_binary\
+build_property.ProjectDir = C:\projects\CSharp\Algoritimos\find_island_by_binary\count_islands_by_binary\count_islands_by_binary\
